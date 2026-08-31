@@ -1,0 +1,174 @@
+# TSAT Communications LTD — Market Analysis & AI Agent Development Plan
+
+**Version 2 (2026)** — Updated from the original *Market Analysis & Algorithm for TSAT Communication 2026*.
+
+## Revision Notes (what changed in this update)
+
+The original document laid out market segmentation, Abuja/Kano deployment algorithms, channel/budget allocation, and a Phase 5 list of third-party marketing-automation tools (OpenSoul, MoEngage, Google Ads AI). It did not answer the brief TSAT actually needs answered: *a single AI agent, owned by TSAT, that drives sales, drives visibility, and gives executives a running picture of both.* This update:
+
+- Keeps the market analysis (Sections 1–4 below), condensed, with the original figures intact.
+- Replaces the generic "AI Agents for Execution" tool list with a purpose-built **TSAT AI Agent Suite**: one shared data layer, three agents, one executive-facing app.
+- Adds a full **step-by-step development roadmap** (Section 6) — the concrete build plan requested.
+- Adds a tech stack recommendation, a data governance/NDPR section, and updated success metrics.
+- Flags every `₦X` placeholder still outstanding — these need real figures from TSAT finance before this becomes a funding document.
+
+---
+
+## 1. Market Opportunity: The 5G Gap Advantage
+
+- Lagos and Abuja generate 31% of Nigeria's telecom sector revenue and hold the densest 5G infrastructure.
+- 5G coverage gaps of 70.9% (Lagos) and 65.6% (Abuja) mean thousands of premium-phone owners still cannot get a 5G signal.
+- MTN Nigeria lit its first commercial 5G in September 2022, rolling out to Kano and six other cities since.
+- **TSAT's Sky Phone** is the differentiator: it runs on 5G/4G/3G/2G terrestrial networks *plus* Thuraya's satellite network across Africa, Europe, Asia, and Australia — a genuine must-have for Abuja executives who travel to satellite-blind zones and Kano's Sahel-crossing business community.
+
+## 2. Market Segmentation
+
+Total addressable market: Kano + Abuja ≈ 5M smartphone users. Target 50% across three segments:
+
+| Segment | Share | Profile |
+|---|---|---|
+| Executive & Corporate | 15% | Abuja executives traveling to dead zones; Kano HNWIs and business owners; Oil/Gas, Mining, NGO |
+| Security & Government | 10% | Military, police, paramilitary; officials in rural Northern Nigeria; emergency/humanitarian workers |
+| Early Adopter Premium | 25% | High-income tech enthusiasts; affluent students/professionals in tech hubs; diaspora buying for family |
+
+## 3. Go-to-Market: Abuja & Kano
+
+**Abuja (Executive/Government focus)** — government liaison (Defense, Interior, Petroleum ministries), diplomatic corps briefings, executive demonstrations at 5-star hotels, retail partnerships in Wuse/Maitama plus Jumia/Konga.
+Budget split: Government Outreach 25% · Executive Events 30% · Digital Advertising 20% · Retail Activation 15% · PR 10%.
+
+**Kano (Commercial/Business focus)** — Chamber of Commerce engagement, traditional/religious leader advocacy, retail presence in Farm Center/Sabon Gari, transportation/logistics sector partnerships.
+Budget split: Business Outreach 30% · Community Programs 20% · Retail Activation 30% · Digital/Social 20%.
+
+## 4. Channels & Budget Allocation
+
+- **Abuja digital:** Facebook/Instagram (35+ executives), LinkedIn (government/corporate), X (tech influencers/diplomats), YouTube demos.
+- **Kano digital:** WhatsApp (99% penetration — primary channel), Facebook, Hausa YouTube, TikTok/Instagram for younger buyers.
+- **Traditional/OOH:** premium magazines and direct mail in Abuja; Hausa radio, market signage, billboards in Kano.
+
+Recommended overall split: Media Placement 35–40% · Events & Demonstrations 15–20% · Staff & Training 10–15% · **AI Agents & Technology 10–15%** · PR 5–10% · Retail/Channel Activation 10–15%.
+
+---
+
+## 5. The TSAT AI Agent Suite
+
+One shared data layer (product catalog, CRM/lead pipeline, campaign performance, market intelligence) feeding **three purpose-built agents**, each built on Claude (Anthropic) rather than assembled from disconnected marketing-automation SaaS tools. This is what turns "AI agents" from a line item into an owned system.
+
+### 5.1 Sales & Lead Agent (customer-facing)
+Runs primarily on WhatsApp Business API (Kano's dominant channel) with a web-chat mirror for Abuja's digital audience.
+- Answers product questions in English and Hausa (5G/4G/3G/2G + Thuraya satellite coverage, pricing, device comparisons).
+- Qualifies leads against the three segments above and scores them by likelihood to convert.
+- Books demo slots (executive briefings in Abuja, community demonstrations in Kano) directly into the sales calendar.
+- Hands warm/qualified leads to a human rep with full conversation context — never closes a sale unsupervised.
+- Tracks referral codes to measure the community-led growth loop already identified in the original ROI algorithm.
+
+### 5.2 Visibility & Growth Agent (marketing-facing)
+- Generates localized ad copy, social posts, and product descriptions (English/Hausa) for review before publishing.
+- Maintains the content calendar across the channels in Section 4.
+- Monitors brand mentions, competitor activity (other satellite/hybrid devices), and market signals.
+- Reallocates recommendations across the digital budget lines based on real performance data (with human sign-off — it advises, finance approves).
+- Produces a weekly visibility report: reach, engagement, share of voice by city.
+
+### 5.3 Executive Intelligence App (leadership-facing)
+This is the app TSAT executives actually use — a lightweight, mobile-first dashboard, not another marketing tool.
+- **Daily/weekly AI-written briefings**: what happened in Abuja and Kano, in plain English, pushed to executives each morning.
+- **Natural-language Q&A**: "How many qualified leads did Kano generate this week versus target?" answered directly from the live data layer, not a static report.
+- **KPI dashboard**: leads, conversions, spend-to-plan by region, referral rate, sentiment — the metrics already defined in Section 7 below.
+- **Threshold alerts**: flags automatically when a region falls behind plan or a competitor move is detected — executives don't have to go looking.
+- **Board-ready export**: one click turns the week's data into a shareable PDF/deck for board updates.
+
+### 5.4 How they connect
+
+```
+                    ┌─────────────────────────────┐
+                    │   Shared Data Layer          │
+                    │   CRM · Product Catalog ·    │
+                    │   Campaign Data · Pipeline    │
+                    └───────────────┬───────────────┘
+                 ┌──────────────────┼──────────────────┐
+                 ▼                  ▼                  ▼
+        ┌────────────────┐ ┌────────────────┐ ┌─────────────────────┐
+        │ Sales & Lead    │ │ Visibility &    │ │ Executive            │
+        │ Agent           │ │ Growth Agent    │ │ Intelligence App      │
+        │ (WhatsApp/Web)  │ │ (Content/Ads)   │ │ (Briefings/Dashboard) │
+        └────────────────┘ └────────────────┘ └─────────────────────┘
+```
+
+The Executive Intelligence App does not duplicate work — it reads and summarizes what the Sales and Visibility agents are already doing, so leadership sees one coherent picture instead of three disconnected tools.
+
+---
+
+## 6. Step-by-Step Development Roadmap
+
+| Phase | Weeks | Goal | Key Tasks | Exit Criteria |
+|---|---|---|---|---|
+| **0. Discovery & Requirements** | 1–2 | Lock scope and success criteria | Interview sales/marketing/exec stakeholders; audit existing CRM/data; confirm budget (resolve `₦X` placeholders); pick the CRM system of record | Signed-off requirements doc + confirmed budget |
+| **1. Data Foundation** | 2–4 | Build the shared data layer | Stand up CRM (or connect existing one); load product catalog; define lead-scoring schema; set up analytics/BI (e.g. Metabase) | Data layer live, queryable, and populated with real product/pricing data |
+| **2. Sales & Lead Agent (MVP)** | 4–7 | Launch WhatsApp sales assistant | Register WhatsApp Business API; build conversation flows (English + Hausa); connect to CRM for lead capture; build human-handoff | Agent handling live inbound WhatsApp queries in a controlled pilot group |
+| **3. Visibility & Growth Agent** | 6–9 | Automate content & monitoring (overlaps Phase 2) | Build content-generation workflows with human review queue; connect social scheduling; build brand/competitor monitoring; weekly report template | First fully AI-drafted, human-approved content week live |
+| **4. Executive Intelligence App** | 8–12 | Ship the exec-facing app | Build mobile-first PWA; wire daily briefing generation; build KPI dashboard and NL Q&A over the data layer; set up threshold alerts | 3–5 executives using the app daily in internal testing |
+| **5. Integration, QA & Security Review** | 12–14 | Make it production-ready | End-to-end testing across all three agents; NDPR data-handling review (Section 8); load/failover testing; role-based access control on the exec app | Security sign-off + all three agents passing QA scenarios |
+| **6. Pilot — Abuja & Kano** | 14–16 | Real-world validation | Run the pilot alongside the marketing launch in Section 3; track leads/conversions/exec app usage against KPIs (Section 7) | Pilot KPIs reviewed; go/no-go decision for full rollout |
+| **7. Scale & Continuous Improvement** | Month 5+ | Full rollout and iteration | Expand beyond pilot cities per demand; retrain/tune agents on real conversation data; quarterly roadmap review | Agents operating at full market scope with a standing improvement cadence |
+
+Each phase should have a named owner on the TSAT side (even part-time) — an agent this connected to sales and executive reporting cannot run as a vendor-only project.
+
+---
+
+## 7. Recommended Tech Stack & Build-vs-Buy
+
+| Layer | Recommendation | Why |
+|---|---|---|
+| Conversational/reasoning engine | Claude (Anthropic) via API / Agent SDK | Strong tool-use and reasoning for lead-qualification and executive Q&A; one model family across all three agents keeps behavior consistent |
+| Primary customer channel | WhatsApp Business API | 99% penetration cited for Kano; already the default channel for Nigerian SMEs and consumers |
+| Executive app | Progressive Web App (React/Next.js) | Works on any executive's phone with no app-store approval delay; upgrade to React Native later only if native push/offline is needed |
+| System of record | CRM (HubSpot or Zoho — Nigeria-friendly pricing) + Postgres for agent-specific data | Buy the commodity CRM; build only what's TSAT-specific on top |
+| Orchestration | Lightweight backend service (Node or Python) coordinating the three agents' tool calls | Keeps the shared data layer as the single source of truth |
+| Analytics/BI | Metabase or existing BI tool | Feeds the Executive Agent's dashboard and NL Q&A without building analytics from scratch |
+| Hosting | Cloud provider with the best Nigeria/West-Africa latency and cost profile at the time of build | Evaluate against actual pilot traffic, not assumed at this stage |
+
+**Build vs. buy principle:** build the three agents and the executive app — that's TSAT's owned IP and workflow. Buy the commodity infrastructure underneath (CRM, WhatsApp BSP, hosting, BI).
+
+---
+
+## 8. Data Governance, Security & Compliance
+
+- **NDPR (Nigeria Data Protection Regulation):** every WhatsApp/lead conversation captures personal data — get consent language into the first message, designate a Data Protection Officer, and define a retention/deletion policy before Phase 2 goes live.
+- **Role-based access on the Executive App:** not every dashboard view should be open to every login — segment by role (CEO, regional sales lead, marketing).
+- **Human-in-the-loop:** the Sales Agent qualifies and hands off, it does not close high-value or government deals unsupervised; the Visibility Agent drafts, a human approves before anything publishes.
+- **Model/data retention policy:** define how long conversation transcripts and lead data are kept, and document it — this is both an NDPR requirement and good practice.
+
+---
+
+## 9. Success Metrics / KPIs
+
+Carried forward from the original deployment plan, plus AI-specific measures:
+
+| Metric | Target |
+|---|---|
+| Contacts identified (pre-launch) | 1,000+ |
+| Leads generated | 500 (Abuja) / 300 (Kano) |
+| Conversion rate | 30% |
+| Referral growth | 2x |
+| **AI Agent response time (Sales Agent)** | Under 60 seconds for first response |
+| **% of leads qualified by AI before human handoff** | 70%+ |
+| **Executive App weekly active use** | 80%+ of named executives per week |
+| **Briefing/report accuracy** (spot-checked against source data) | No material discrepancies |
+
+---
+
+## 10. Immediate Next Steps
+
+**Week 1–2**
+- Confirm total marketing and AI-agent development budget (replace every `₦X` placeholder with real figures).
+- Assign a TSAT-side owner for the AI Agent Suite (Phase 0 above).
+- Begin stakeholder mapping (Abuja government contacts, Kano business community) — as in the original plan.
+- Audit current CRM/lead-tracking state to scope Phase 1 accurately.
+
+**Month 1–2**
+- Execute Phases 0–2 of the roadmap (Section 6).
+- Source demonstration devices in parallel, per the original marketing timeline.
+- Secure retail channel partnerships.
+
+**Month 3–4**
+- Simultaneous marketing launch in Abuja & Kano alongside the Sales and Visibility agents going live.
+- Executive App in daily use ahead of full public launch, so leadership is reading real pilot data from day one.
