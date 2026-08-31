@@ -10,7 +10,8 @@ The original document laid out market segmentation, Abuja/Kano deployment algori
 - Replaces the generic "AI Agents for Execution" tool list with a purpose-built **TSAT AI Agent Suite**: one shared data layer, three agents, one executive-facing app.
 - Adds a full **step-by-step development roadmap** (Section 6) — the concrete build plan requested.
 - Adds a tech stack recommendation, a data governance/NDPR section, and updated success metrics.
-- Flags every `₦X` placeholder still outstanding — these need real figures from TSAT finance before this becomes a funding document.
+- Replaces every `₦X` placeholder with real ₦ and $ figures (Section 4A), built on a stated total budget and exchange rate that TSAT finance can confirm or adjust.
+- Adds Section 7A explaining how the Agent API connects to the TSAT website, WhatsApp, the executive app, and other systems.
 
 ---
 
@@ -46,6 +47,53 @@ Budget split: Business Outreach 30% · Community Programs 20% · Retail Activati
 - **Traditional/OOH:** premium magazines and direct mail in Abuja; Hausa radio, market signage, billboards in Kano.
 
 Recommended overall split: Media Placement 35–40% · Events & Demonstrations 15–20% · Staff & Training 10–15% · **AI Agents & Technology 10–15%** · PR 5–10% · Retail/Channel Activation 10–15%.
+
+---
+
+## 4A. Budget — Real Figures
+
+> **Planning assumptions (confirm with TSAT finance before this becomes a funding document):**
+> **Total launch budget = ₦250,000,000** · **Exchange rate = ₦1,550 per US$1 (2026)** ⇒ **≈ US$161,300**.
+> Every figure below is derived from these two numbers plus the percentage ranges already in the original document. Change the total or the rate and the tables scale proportionally — the percentages stay valid.
+
+### By category
+
+| Category | % | Naira (₦) | USD ($) |
+|---|---:|---:|---:|
+| Media Placement | 37% | 92,500,000 | 59,680 |
+| Events & Demonstrations | 18% | 45,000,000 | 29,030 |
+| AI Agents & Technology | 13% | 32,500,000 | 20,970 |
+| Staff & Training | 12% | 30,000,000 | 19,350 |
+| Retail / Channel Activation | 12% | 30,000,000 | 19,350 |
+| Public Relations | 8% | 20,000,000 | 12,900 |
+| **Total** | **100%** | **250,000,000** | **161,300** |
+
+### By region (Abuja 50% · Kano 40% · Reserve 10%)
+
+| Region | Naira (₦) | USD ($) |
+|---|---:|---:|
+| Abuja | 125,000,000 | 80,650 |
+| Kano | 100,000,000 | 64,520 |
+| Reserve (market intelligence, competitive response) | 25,000,000 | 16,130 |
+| **Total** | **250,000,000** | **161,300** |
+
+**Abuja allocation (of ₦125,000,000):** Digital/Performance 25% = ₦31,250,000 ($20,160) · Executive Events 20% = ₦25,000,000 ($16,130) · Government Relations 15% = ₦18,750,000 ($12,100) · Retail & Channel 20% = ₦25,000,000 ($16,130) · Public Relations 10% = ₦12,500,000 ($8,060) · Staff & Support 10% = ₦12,500,000 ($8,060).
+
+**Kano allocation (of ₦100,000,000):** Community & Business Outreach 30% = ₦30,000,000 ($19,350) · Digital/Social 20% = ₦20,000,000 ($12,900) · Retail Activation 20% = ₦20,000,000 ($12,900) · Radio & Traditional Media 15% = ₦15,000,000 ($9,680) · Staff & Support 15% = ₦15,000,000 ($9,680).
+
+### AI Agent build & first-year run cost (the ₦32,500,000 technology line, itemized)
+
+| Item | Naira (₦) | USD ($) | Type |
+|---|---:|---:|---|
+| Agent + Executive App development (≈16-week build) | 18,000,000 | 11,610 | One-time |
+| Maintenance & tuning (year 1) | 3,500,000 | 2,260 | Annual |
+| Claude API usage (year 1, pilot scale) | 4,000,000 | 2,580 | Annual |
+| CRM subscription (HubSpot/Zoho, year 1) | 2,500,000 | 1,610 | Annual |
+| Hosting & infrastructure (year 1) | 2,500,000 | 1,610 | Annual |
+| WhatsApp Business API / BSP fees (year 1) | 2,000,000 | 1,290 | Annual |
+| **Total** | **32,500,000** | **20,970** | |
+
+The build is a one-time ₦18M (~$11.6K); the remaining ₦14.5M (~$9.4K) is recurring and should be re-budgeted each year. Claude API usage at pilot scale is small — a customer-facing agent on Claude Sonnet 5 ($2 / $10 per million tokens) processes millions of tokens well within ₦4M — so the recurring cost is dominated by the CRM, hosting, and WhatsApp fees, not the model.
 
 ---
 
@@ -101,7 +149,7 @@ The Executive Intelligence App does not duplicate work — it reads and summariz
 
 | Phase | Weeks | Goal | Key Tasks | Exit Criteria |
 |---|---|---|---|---|
-| **0. Discovery & Requirements** | 1–2 | Lock scope and success criteria | Interview sales/marketing/exec stakeholders; audit existing CRM/data; confirm budget (resolve `₦X` placeholders); pick the CRM system of record | Signed-off requirements doc + confirmed budget |
+| **0. Discovery & Requirements** | 1–2 | Lock scope and success criteria | Interview sales/marketing/exec stakeholders; audit existing CRM/data; confirm the ₦250M total and rate assumptions in Section 4A; pick the CRM system of record | Signed-off requirements doc + confirmed budget |
 | **1. Data Foundation** | 2–4 | Build the shared data layer | Stand up CRM (or connect existing one); load product catalog; define lead-scoring schema; set up analytics/BI (e.g. Metabase) | Data layer live, queryable, and populated with real product/pricing data |
 | **2. Sales & Lead Agent (MVP)** | 4–7 | Launch WhatsApp sales assistant | Register WhatsApp Business API; build conversation flows (English + Hausa); connect to CRM for lead capture; build human-handoff | Agent handling live inbound WhatsApp queries in a controlled pilot group |
 | **3. Visibility & Growth Agent** | 6–9 | Automate content & monitoring (overlaps Phase 2) | Build content-generation workflows with human review queue; connect social scheduling; build brand/competitor monitoring; weekly report template | First fully AI-drafted, human-approved content week live |
@@ -127,6 +175,60 @@ Each phase should have a named owner on the TSAT side (even part-time) — an ag
 | Hosting | Cloud provider with the best Nigeria/West-Africa latency and cost profile at the time of build | Evaluate against actual pilot traffic, not assumed at this stage |
 
 **Build vs. buy principle:** build the three agents and the executive app — that's TSAT's owned IP and workflow. Buy the commodity infrastructure underneath (CRM, WhatsApp BSP, hosting, BI).
+
+---
+
+## 7A. How the Agent API Works with the TSAT Website & Other Applications
+
+The three agents are not three separate products — they are one backend service, the **TSAT Agent API**, that every TSAT surface talks to. Nothing calls Claude directly; the website, WhatsApp, and the executive app all call the Agent API, and the Agent API is the only thing holding the Claude API key and the connection to the data layer. That single boundary is what makes the system secure and consistent.
+
+### The architecture
+
+```
+   TSAT Website        WhatsApp          Executive App        Social / Ad
+   (chat widget)       Business API       (PWA)               platforms
+        │                   │                  │                   │
+        │  HTTPS / webhook   │  webhook          │  authenticated    │  scheduled
+        ▼                   ▼                  ▼   API calls         ▼  API calls
+   ┌──────────────────────────────────────────────────────────────────────┐
+   │                        TSAT AGENT API  (backend service)               │
+   │   • Holds the Claude API key (never exposed to any browser or phone)   │
+   │   • Runs the agent logic (Sales, Visibility, Executive)                │
+   │   • Enforces auth, rate limits, NDPR consent & logging                 │
+   └───────────────┬───────────────────────────────┬───────────────────────┘
+                   │                               │
+                   ▼                               ▼
+         ┌───────────────────┐           ┌───────────────────────┐
+         │  Claude API        │           │  Shared Data Layer     │
+         │  (reasoning engine)│           │  CRM · Catalog · KPIs  │
+         └───────────────────┘           └───────────────────────┘
+```
+
+### How each surface connects
+
+| Surface | How it connects to the Agent API | What flows |
+|---|---|---|
+| **TSAT website** | A small JavaScript chat widget embedded on the site (a `<script>` snippet on product/landing pages) calls the Agent API over HTTPS. Product pages and the "request a demo" form post lead data to the same API. | Visitor question → Agent API → Claude → answer rendered in the widget; captured lead → CRM. |
+| **WhatsApp** | The WhatsApp Business API sends every inbound message to a **webhook** on the Agent API. The Agent API replies through the WhatsApp send-message endpoint. | Customer message (EN/Hausa) → webhook → Claude → reply sent back on WhatsApp; qualified lead → CRM. |
+| **Executive app (PWA)** | The app makes **authenticated** API calls (each executive logs in; role-based token) to dedicated endpoints for briefings, KPI data, and natural-language questions. | "How did Kano do this week?" → Agent API → queries data layer → Claude summarizes → answer + chart. |
+| **CRM** | The Agent API writes leads and reads pipeline status through the CRM's own REST API. | New/qualified leads written; conversion status read back for reporting. |
+| **Social & ad platforms** | The Visibility Agent, running inside the Agent API on a schedule, calls the Meta/LinkedIn/X APIs to publish approved content and pull performance data. | Approved posts out; reach/engagement metrics in. |
+
+### The request flow, concretely
+
+1. A surface (website widget, WhatsApp webhook, or exec app) sends a message or question to the Agent API.
+2. The Agent API attaches context — product catalog, the customer's history, or live KPIs from the data layer — and calls the **Claude API** (`POST /v1/messages`).
+3. Claude may use **tools** the Agent API exposes to it: look up a price, check inventory, create a CRM lead, book a demo slot, or query this week's sales numbers. The Agent API runs those tool calls against the data layer and returns the results to Claude.
+4. Claude returns the final answer; the Agent API sends it back to the surface that asked — as a chat reply, a WhatsApp message, or a dashboard answer.
+
+### Why route everything through one API (not call Claude from each app)
+
+- **Security:** the Claude API key and CRM credentials live only on the server, never in a browser or on a phone — a public website must never hold them.
+- **Consistency:** all three agents share one product catalog, one lead-scoring logic, and one set of guardrails, so the website and WhatsApp give the same answers.
+- **Compliance:** NDPR consent capture, conversation logging, and retention rules are enforced in one place (Section 8).
+- **Swappable parts:** the CRM, hosting, or even the model can change behind the Agent API without touching the website or the app.
+
+*Implementation note:* the customer-facing Sales Agent runs well on **Claude Sonnet 5** (fast, cost-efficient for high message volume); the Executive Intelligence App's reasoning and briefing generation is better served by a higher-capability model such as **Claude Opus 5**. Same API, different model per workload — chosen inside the Agent API, invisible to the surfaces.
 
 ---
 
@@ -159,7 +261,7 @@ Carried forward from the original deployment plan, plus AI-specific measures:
 ## 10. Immediate Next Steps
 
 **Week 1–2**
-- Confirm total marketing and AI-agent development budget (replace every `₦X` placeholder with real figures).
+- Confirm or adjust the ₦250,000,000 total budget and ₦1,550/$1 rate that Section 4A is built on, then lock the category and regional figures.
 - Assign a TSAT-side owner for the AI Agent Suite (Phase 0 above).
 - Begin stakeholder mapping (Abuja government contacts, Kano business community) — as in the original plan.
 - Audit current CRM/lead-tracking state to scope Phase 1 accurately.
