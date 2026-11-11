@@ -115,6 +115,7 @@ Runs primarily on WhatsApp Business API (Kano's dominant channel) with a web-cha
 - Monitors brand mentions, competitor activity (other satellite/hybrid devices), and market signals.
 - Reallocates recommendations across the digital budget lines based on real performance data (with human sign-off — it advises, finance approves).
 - Produces a weekly visibility report: reach, engagement, share of voice by city.
+- **Can be expanded into a full multi-platform Social Media Manager** (Facebook, LinkedIn, X, Instagram) with scheduling, trend-safety filtering, a human-approval gate, and DM auto-replies — see Section 5.5.
 
 ### 5.3 Executive Intelligence App (leadership-facing)
 This is the app TSAT executives actually use — a lightweight, mobile-first dashboard, not another marketing tool.
@@ -142,6 +143,77 @@ This is the app TSAT executives actually use — a lightweight, mobile-first das
 ```
 
 The Executive Intelligence App does not duplicate work — it reads and summarizes what the Sales and Visibility agents are already doing, so leadership sees one coherent picture instead of three disconnected tools.
+
+### 5.5 Social Media Manager (Facebook · LinkedIn · X · Instagram)
+
+An expansion of the Visibility & Growth Agent into a full, multi-platform social media manager. TSAT connects its official accounts once; the module then analyses, plans, schedules, and drafts — but **nothing is ever published without a human Comms Manager's approval**, and nothing is published if that approval is late. It is a drafting-and-safety assistant, not an autopilot.
+
+**What it does**
+- **Connect accounts** — links TSAT's Facebook Page, Instagram Business account, LinkedIn Company Page, and X account through each platform's official API (secure OAuth; no passwords stored).
+- **Analyse each handle** — audience make-up, engagement patterns, best-performing content, and the times followers are most active per platform.
+- **Build the schedule** — a content calendar with each post placed at the optimal time for that platform's audience (so posts land when people are watching, not at random).
+- **Draft the posts** — localized English/Hausa copy, on-brand, with suggested image/hashtag.
+- **Adopt safe trends** — watches trending topics and adapts the brand-relevant ones, while automatically screening out any trend containing flagged words or images (see the safety filter below).
+- **Route for approval** — every post goes to the human Comms Manager, who must approve it **at least 5 hours before** its scheduled time, or it is **automatically held and not posted**.
+- **Reply to DMs** — answers Direct Messages with a short, polite message directing the person to call the human agent, and logs them as a lead in the CRM.
+
+**The approval workflow — the 5-hour gate (core safety rule)**
+
+Every post moves through this state machine. The 5-hour rule means the AI drafts well ahead (drafts are created ≥24 hours before the slot) so the Comms Manager always has time to review.
+
+```
+  AI drafts post + proposed time ─► PENDING APPROVAL ─► (Comms Manager reviews)
+                                           │
+              ┌────────────────────────────┼─────────────────────────────┐
+              ▼                             ▼                             ▼
+   Approved BEFORE T–5h          NOT approved by T–5h              Rejected / edit
+   → SCHEDULED                   → AUTO-HELD, NOT POSTED           → back to AI or
+   → publishes at the time       → Comms Manager notified it         Comms Manager to
+                                   lapsed; can reschedule             revise & re-queue
+                                   (clock restarts)
+```
+
+- **Hard rule:** no approval by 5 hours before go-live = the post does **not** go out. Silence never results in a post.
+- Nothing is ever published without an explicit human approval — the AI drafts and schedules; a person always makes the final call.
+- Approvals happen in the Comms Manager's queue (web + mobile), with reminders as the T–5h cutoff approaches.
+
+**Trend adoption with a brand-safety filter**
+
+Before any trend reaches a human, it passes an automatic filter — this is what stops the system embarrassing TSAT:
+- **Flagged-word blocklist** (configurable with TSAT) — profanity, political, religious, tribal/ethnic-sensitive, competitor-bashing, and misinformation terms. This matters especially for the Kano / Northern Nigeria audience, where a tone-deaf trend can do real brand damage.
+- **Image moderation** — trend images are screened; anything unsafe or off-brand is rejected automatically.
+- **Category blocks** — no political, religious, or otherwise controversial trends are ever drafted, regardless of how viral they are.
+- Only trends that pass the filter become drafts — and even then, the Comms Manager still approves.
+
+**Direct-message auto-reply**
+- Short, on-brand reply on each platform, e.g.: *"Thank you for contacting TSAT Communications! For the fastest help, please call us on 0XXX-XXX-XXXX, or send your number and an agent will call you. — TSAT Team"* (English/Hausa).
+- Captures the sender as a lead in the CRM, so DM enquiries feed the same pipeline as WhatsApp.
+- By design it **never tries to resolve or close** — it always routes the person to a human agent.
+
+**Honest platform constraints (must be set up with TSAT before go-live)**
+
+Each platform has its own rules, and automation is not equal across them — the proposal is built around what the official APIs actually allow:
+- **Meta (Facebook + Instagram)** — the most capable: Graph API supports scheduled publishing, analytics, and messaging auto-replies (within Meta's rules and the 24-hour messaging window). Requires Business accounts and Meta App Review.
+- **X (Twitter)** — posting and DM automation require a **paid API tier**, with rate and feature limits. Trends data is gated.
+- **LinkedIn** — Company Page posting and analytics are available via LinkedIn's Marketing/Community Management API (partner access). **LinkedIn does not offer general automated DM replies** for inboxes — so on LinkedIn the module **forwards messages to the Comms Manager** rather than auto-replying.
+- **Approvals & timelines** — each platform requires app registration and review (Meta App Review, LinkedIn partner access, an X paid tier). These take time and must be started early. Trend-data coverage varies by platform; where a platform's trends are not accessible, a curated trend source is used.
+- The flagged-word blocklist and brand-safety categories are agreed with TSAT and owned by TSAT — the system enforces TSAT's rules, not generic ones.
+
+**Where it fits & cost** — this is **new scope beyond the $19,400 pilot** (which keeps a *lean* Visibility Agent). It is best delivered as a **Phase 2 add-on module** once the core pilot is proven. Indicative additional cost:
+
+| Item | USD ($) | Naira (₦) | Type |
+|---|---:|---:|---|
+| 4 platform connectors (OAuth, posting, analytics) | 2,800 | 4,340,000 | One-time |
+| Scheduler + optimal-time engine | 1,000 | 1,550,000 | One-time |
+| Trend monitoring + brand-safety filter (words + image moderation) | 1,500 | 2,325,000 | One-time |
+| Approval workflow + 5-hour gate + Comms Manager approval screen | 1,600 | 2,480,000 | One-time |
+| DM auto-reply across platforms + CRM lead capture | 1,200 | 1,860,000 | One-time |
+| QA + platform app-review support | 900 | 1,395,000 | One-time |
+| **Module build subtotal** | **9,000** | **13,950,000** | One-time |
+| Recurring (X API tier, image-moderation API, extra hosting) — year 1 | 1,500 | 2,325,000 | Annual |
+| **Module all-in (year 1)** | **10,500** | **16,275,000** | |
+
+Adding this to the core pilot would take the all-in figure past the $20,000 ceiling, which is why it is scoped as a separate Phase 2 module with its own budget. It can also be trimmed (e.g. Meta-only first, LinkedIn/X later) if a smaller first step is preferred.
 
 ---
 
