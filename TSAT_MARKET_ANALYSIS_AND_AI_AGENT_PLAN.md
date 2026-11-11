@@ -199,21 +199,31 @@ Each platform has its own rules, and automation is not equal across them — the
 - **Approvals & timelines** — each platform requires app registration and review (Meta App Review, LinkedIn partner access, an X paid tier). These take time and must be started early. Trend-data coverage varies by platform; where a platform's trends are not accessible, a curated trend source is used.
 - The flagged-word blocklist and brand-safety categories are agreed with TSAT and owned by TSAT — the system enforces TSAT's rules, not generic ones.
 
-**Where it fits & cost** — this is **new scope beyond the $19,400 pilot** (which keeps a *lean* Visibility Agent). It is best delivered as a **Phase 2 add-on module** once the core pilot is proven. Indicative additional cost:
+**Where it fits & cost** — TSAT has chosen to fold a **Meta-only** version (Facebook + Instagram) into the main pilot, with **LinkedIn and X added in a later phase**. Meta is the most capable platform for automation (scheduled publishing, analytics, and DM auto-replies all supported), so it delivers the full feature — schedule, safe-trend filter, 5-hour approval gate, DM auto-reply — on the two platforms that matter most, while keeping cost contained. The full four-platform scope remains available later.
+
+**Meta-only module (in the pilot):**
 
 | Item | USD ($) | Naira (₦) | Type |
 |---|---:|---:|---|
-| 4 platform connectors (OAuth, posting, analytics) | 2,800 | 4,340,000 | One-time |
-| Scheduler + optimal-time engine | 1,000 | 1,550,000 | One-time |
-| Trend monitoring + brand-safety filter (words + image moderation) | 1,500 | 2,325,000 | One-time |
-| Approval workflow + 5-hour gate + Comms Manager approval screen | 1,600 | 2,480,000 | One-time |
-| DM auto-reply across platforms + CRM lead capture | 1,200 | 1,860,000 | One-time |
-| QA + platform app-review support | 900 | 1,395,000 | One-time |
-| **Module build subtotal** | **9,000** | **13,950,000** | One-time |
-| Recurring (X API tier, image-moderation API, extra hosting) — year 1 | 1,500 | 2,325,000 | Annual |
-| **Module all-in (year 1)** | **10,500** | **16,275,000** | |
+| Meta connector — Facebook + Instagram (posting, analytics, DM) | 1,500 | 2,325,000 | One-time |
+| Scheduler + optimal-time engine | 600 | 930,000 | One-time |
+| Trend monitoring + brand-safety filter (words + image moderation) | 1,000 | 1,550,000 | One-time |
+| Approval workflow + 5-hour gate + Comms Manager approval screen | 900 | 1,395,000 | One-time |
+| **Meta module build subtotal** | **4,000** | **6,200,000** | One-time |
+| Recurring (image-moderation API, Meta API, extra hosting) — year 1 | 500 | 775,000 | Annual |
 
-Adding this to the core pilot would take the all-in figure past the $20,000 ceiling, which is why it is scoped as a separate Phase 2 module with its own budget. It can also be trimmed (e.g. Meta-only first, LinkedIn/X later) if a smaller first step is preferred.
+**Impact on the pilot budget.** Adding the Meta module moves the all-in figure above the earlier $20,000 target — a deliberate choice, since it buys a full social media manager:
+
+| | USD ($) | Naira (₦) |
+|---|---:|---:|
+| One-time build (core $12,800 + Meta module $4,000) | 16,800 | 26,040,000 |
+| Year-1 running (core $1,600 + Meta $500) | 2,100 | 3,255,000 |
+| Professional & administrative fees | 3,500 | 5,425,000 |
+| **Revised grand total (all-in)** | **22,400** | **34,720,000** |
+
+**The social manager is the increase — and it is removable.** The Meta module adds **$4,000 build + $500/yr**; it is what takes the pilot above the earlier figure. If TSAT prefers to start leaner, the module can be **removed and deferred to a Phase 2 review update**, bringing the pilot to **$17,900 (₦27,745,000)** — core build $12,800 + running $1,600 + professional $3,500. Professional & administrative fees were also trimmed from $5,000 to **$3,500** to keep the all-in figure tight.
+
+**Later phase (LinkedIn + X):** adds roughly **$5,000 build + $1,000/yr** (X requires a paid API tier; LinkedIn forwards DMs to the Comms Manager rather than auto-replying) — budgeted separately when TSAT is ready to extend.
 
 ---
 

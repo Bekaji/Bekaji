@@ -56,19 +56,16 @@ function td(t, align, i) { return { text: t, options: { color: INK, fill: { colo
 function tsub(t, align) { return { text: t, options: { bold: true, color: "FFFFFF", fill: { color: TEAL }, fontSize: 11.5, fontFace: "Calibri", align: align || "left", valign: "middle" } }; }
 
 // =========================================================
-// SLIDE 1 — COVER (sell, no price)
+// 1 — COVER
 // =========================================================
 let s = pres.addSlide({ masterName: "DARK" });
 s.addShape(pres.ShapeType.roundRect, { x: 0.75, y: 0.7, w: 0.72, h: 0.72, rectRadius: 0.2, fill: { color: TEAL }, line: { type: "none" } });
 s.addShape(pres.ShapeType.chevron, { x: 0.93, y: 0.9, w: 0.36, h: 0.32, fill: { color: "FFFFFF" }, line: { type: "none" }, rotate: 270 });
 s.addText("TSAT COMMUNICATIONS LTD", { x: 1.62, y: 0.78, w: 9, h: 0.3, fontSize: 12, bold: true, color: "7FC3CE", charSpacing: 2, fontFace: "Calibri", isTextBox: true });
 s.addText("Nigeria  ·  Abuja & Kano launch", { x: 1.62, y: 1.08, w: 9, h: 0.3, fontSize: 11, color: "9FC9CF", fontFace: "Calibri", isTextBox: true });
-
 s.addText("An AI Assistant that\nsells while you sleep", { placeholder: "title" });
-s.addText("A sales, marketing and reporting assistant for the Sky Phone — answering every customer in seconds, growing TSAT's visibility, and briefing executives each morning.", { placeholder: "body" });
-
-// value chips
-const chips = ["Sells 24/7 on WhatsApp", "Grows visibility", "Briefs executives daily"];
+s.addText("A sales, social media and reporting assistant for the Sky Phone — answering every customer in seconds, managing TSAT's social channels safely, and briefing executives each morning.", { placeholder: "body" });
+const chips = ["Sells 24/7 on WhatsApp", "Manages social media", "Briefs executives daily"];
 let chx = 0.8;
 chips.forEach((c) => {
   const w = 0.5 + c.length * 0.092;
@@ -79,7 +76,7 @@ chips.forEach((c) => {
 s.addText("Prepared for TSAT executives  ·  November 2026", { x: 5.2, y: 6.85, w: 7.3, h: 0.35, align: "right", fontSize: 10.5, color: "6FA2A9", fontFace: "Calibri", isTextBox: true });
 
 // =========================================================
-// SLIDE 2 — THE OPPORTUNITY
+// 2 — OPPORTUNITY
 // =========================================================
 s = pres.addSlide({ masterName: "CONTENT" });
 s.addText("The opportunity: a connectivity gap only TSAT can fill", { placeholder: "title" });
@@ -112,14 +109,14 @@ usps.forEach((u) => {
 });
 
 // =========================================================
-// SLIDE 3 — THE CHALLENGE
+// 3 — CHALLENGE
 // =========================================================
 s = pres.addSlide({ masterName: "CONTENT" });
 s.addText("The challenge: great product, but sales leak and leaders fly blind", { placeholder: "title" });
 s.addText("A strong launch will drive thousands of enquiries. Without the right system, most never convert — and executives can't see what's working in time to act.", { x: 0.6, y: 1.32, w: 12.1, h: 0.5, fontSize: 15, color: SOFT, fontFace: "Calibri", isTextBox: true });
 const chal = [
   ["01", "Enquiries go cold", "Customers message at all hours. A reply that comes hours later — or in the wrong language — is a lost sale."],
-  ["02", "Staff can't scale", "Human reps can't answer every WhatsApp, every billboard call, every demo request at once."],
+  ["02", "Social is a full-time job", "Posting consistently, at the right times, on every platform — and replying to DMs — is more than one team can keep up."],
   ["03", "Spend is guesswork", "Marketing money spreads across channels with no live read on which ones actually bring buyers."],
   ["04", "Leaders fly blind", "Executives wait on manual reports — by the time numbers arrive, the week is already gone."],
 ];
@@ -134,14 +131,14 @@ chal.forEach((c, i) => {
 });
 
 // =========================================================
-// SLIDE 4 — THE SOLUTION
+// 4 — SOLUTION
 // =========================================================
 s = pres.addSlide({ masterName: "CONTENT" });
 s.addText("The solution: one AI assistant, three jobs", { placeholder: "title" });
-s.addText("A single system — owned by TSAT — that sells, markets, and reports. All three parts share one source of truth about products, leads, and results.", { x: 0.6, y: 1.32, w: 12.1, h: 0.5, fontSize: 15, color: SOFT, fontFace: "Calibri", isTextBox: true });
+s.addText("A single system — owned by TSAT — that sells, runs social media, and reports. All three parts share one source of truth about products, leads, and results.", { x: 0.6, y: 1.32, w: 12.1, h: 0.5, fontSize: 15, color: SOFT, fontFace: "Calibri", isTextBox: true });
 const agents = [
   ["S", TEAL, TEALSOFT, "Sales Assistant", "Chats with customers on WhatsApp in Hausa & English, answers product questions, qualifies buyers, and books demos — 24/7."],
-  ["V", AMBER, AMBERSOFT, "Visibility Assistant", "Writes and schedules localized ads and posts, watches competitors, and spends the budget where it actually converts."],
+  ["V", AMBER, AMBERSOFT, "Social & Visibility", "Plans, drafts and schedules posts on Facebook & Instagram at the best times, adopts safe trends, and replies to DMs — every post human-approved."],
   ["E", GREEN, GREENSOFT, "Executive App", "A phone dashboard that writes a plain-English briefing each morning and answers questions from live sales data."],
 ];
 let ax = 0.6; const aw = 3.97;
@@ -149,7 +146,7 @@ agents.forEach((a) => {
   card(s, ax, 2.1, aw, 3.1);
   badge(s, ax + 0.35, 2.45, 0.8, a[2], a[0], a[1]);
   s.addText(a[3], { x: ax + 0.35, y: 3.4, w: aw - 0.7, h: 0.5, fontSize: 17, bold: true, color: INK, fontFace: "Cambria", margin: 0, isTextBox: true });
-  s.addText(a[4], { x: ax + 0.35, y: 3.95, w: aw - 0.7, h: 1.15, fontSize: 12.5, color: SOFT, fontFace: "Calibri", valign: "top", margin: 0, isTextBox: true });
+  s.addText(a[4], { x: ax + 0.35, y: 3.95, w: aw - 0.7, h: 1.25, fontSize: 12, color: SOFT, fontFace: "Calibri", valign: "top", margin: 0, isTextBox: true });
   ax += aw + 0.21;
 });
 s.addShape(pres.ShapeType.roundRect, { x: 0.6, y: 5.4, w: 12.13, h: 1.0, rectRadius: 0.1, fill: { color: NAVY }, line: { type: "none" } });
@@ -159,7 +156,7 @@ s.addText([
 ], { x: 0.95, y: 5.4, w: 11.4, h: 1.0, valign: "middle", align: "left", fontFace: "Calibri", margin: 0, isTextBox: true });
 
 // =========================================================
-// SLIDE 5 — HOW IT WORKS (Musa)
+// 5 — HOW IT WORKS (Musa)
 // =========================================================
 s = pres.addSlide({ masterName: "CONTENT" });
 s.addText("How it works: one message becomes a sale", { placeholder: "title" });
@@ -169,7 +166,7 @@ const steps = [
   ["2", "Instant answer", "The assistant explains satellite coverage in Hausa, in seconds."],
   ["3", "Books a demo", "It spots a 20-truck fleet, saves the lead, schedules a demo."],
   ["4", "Human closes", "A rep meets a warm, informed customer and seals the sale."],
-  ["5", "Ads keep working", "The Visibility Assistant tracks which ads brought him in."],
+  ["5", "Social keeps working", "Approved posts run on Facebook & Instagram, pulling in more Musas."],
   ["6", "Boss is briefed", "Next morning the CEO reads: 12 leads, 3 sales, Kano ahead."],
 ];
 steps.forEach((st, i) => {
@@ -183,12 +180,12 @@ steps.forEach((st, i) => {
 });
 
 // =========================================================
-// SLIDE 6 — HOW IT CONNECTS
+// 6 — HOW IT CONNECTS
 // =========================================================
 s = pres.addSlide({ masterName: "CONTENT" });
 s.addText("How it connects to the website and your apps", { placeholder: "title" });
 s.addText("Every channel talks to one secure TSAT Agent API — never to the AI directly. That keeps keys safe, answers consistent, and data private.", { x: 0.6, y: 1.32, w: 12.1, h: 0.5, fontSize: 15, color: SOFT, fontFace: "Calibri", isTextBox: true });
-const surf = ["Website\nchat widget", "WhatsApp\nBusiness API", "Executive\napp", "Social &\nad platforms"];
+const surf = ["Website\nchat widget", "WhatsApp\nBusiness API", "Executive\napp", "Facebook &\nInstagram"];
 let fx = 0.95; const fw = 2.7;
 surf.forEach((t) => {
   card(s, fx, 2.1, fw, 0.95, MIST);
@@ -208,18 +205,45 @@ card(s, 6.9, 5.2, 4.4, 1.1, NAVYSOFT);
 s.addText([{ text: "Data layer\n", options: { fontSize: 14, bold: true, color: NAVY, fontFace: "Cambria" } }, { text: "CRM · catalog · live KPIs", options: { fontSize: 11.5, color: SOFT } }], { x: 6.9, y: 5.2, w: 4.4, h: 1.1, align: "center", valign: "middle", margin: 0, isTextBox: true });
 
 // =========================================================
-// SLIDE 7 — WHAT TSAT GAINS (value sell)
+// 7 — SOCIAL MEDIA MANAGER (NEW)
+// =========================================================
+s = pres.addSlide({ masterName: "CONTENT" });
+s.addText("Plus: a social media manager with a safety catch", { placeholder: "title" });
+s.addText("Connects Facebook & Instagram, plans and drafts posts — but a human approves everything, and nothing risky ever gets through.", { x: 0.6, y: 1.32, w: 12.1, h: 0.5, fontSize: 15, color: SOFT, fontFace: "Calibri", isTextBox: true });
+// left: what it does
+card(s, 0.6, 2.1, 6.0, 4.3);
+s.addText("What it does", { x: 0.9, y: 2.35, w: 5.4, h: 0.45, fontSize: 17, bold: true, color: NAVY, fontFace: "Cambria", isTextBox: true });
+const did = [
+  "Connects Facebook & Instagram — analyses each handle",
+  "Schedules posts at the best time for your audience",
+  "Adopts only brand-safe trends (flagged words & images blocked)",
+  "Auto-replies to DMs — directs people to call a human agent",
+  "Feeds every DM enquiry into the CRM as a lead",
+];
+s.addText(did.map((t) => ({ text: t, options: { bullet: { code: "2713", indent: 18 }, color: INK, breakLine: true, paraSpaceAfter: 14 } })), { x: 0.95, y: 2.95, w: 5.35, h: 3.3, fontSize: 13.5, color: INK, fontFace: "Calibri", valign: "top", margin: 0, isTextBox: true });
+// right top: the 5-hour rule (teal)
+s.addShape(pres.ShapeType.roundRect, { x: 6.76, y: 2.1, w: 5.97, h: 2.05, rectRadius: 0.1, fill: { color: TEAL }, line: { type: "none" }, shadow: { type: "outer", color: "9AA6B2", blur: 8, offset: 3, angle: 90, opacity: 0.28 } });
+s.addText("🔒  The 5-hour approval rule", { x: 7.06, y: 2.32, w: 5.4, h: 0.45, fontSize: 16, bold: true, color: "FFFFFF", fontFace: "Cambria", isTextBox: true });
+s.addText("Every post goes to your Comms Manager first. It must be approved at least 5 hours before it is due — if it is not, it is automatically held and never posted. Nothing goes out without a human's yes.", { x: 7.06, y: 2.85, w: 5.4, h: 1.2, fontSize: 12.5, color: "EAF6F7", fontFace: "Calibri", valign: "top", margin: 0, isTextBox: true });
+// right bottom: brand-safe (amber tint)
+card(s, 6.76, 4.35, 5.97, 2.05, AMBERSOFT);
+s.addText("Brand-safe by design", { x: 7.06, y: 4.57, w: 5.4, h: 0.45, fontSize: 16, bold: true, color: "9A5E12", fontFace: "Cambria", isTextBox: true });
+s.addText("Trends with flagged words or unsafe images are filtered out automatically — before anyone even sees them. No political, religious, or controversial trends, ever.", { x: 7.06, y: 5.1, w: 5.4, h: 1.2, fontSize: 12.5, color: SOFT, fontFace: "Calibri", valign: "top", margin: 0, isTextBox: true });
+s.addText("Optional module — it adds ~$4,000 to the pilot and can be deferred to a Phase 2 review update whenever TSAT is ready.", { x: 0.6, y: 6.55, w: 12.13, h: 0.35, align: "center", fontSize: 11.5, italic: true, color: FAINT, fontFace: "Calibri", isTextBox: true });
+
+// =========================================================
+// 8 — WHAT TSAT GAINS (value)
 // =========================================================
 s = pres.addSlide({ masterName: "CONTENT" });
 s.addText("What TSAT gains", { placeholder: "title" });
 s.addText("This is not software for its own sake — it is sales, visibility and control, delivered as one asset TSAT owns.", { x: 0.6, y: 1.32, w: 12.1, h: 0.5, fontSize: 15, color: SOFT, fontFace: "Calibri", isTextBox: true });
 const gains = [
   ["Never miss a sale", "Every customer gets an instant, helpful reply — day or night, in Hausa or English."],
-  ["Sell more, same team", "The assistant handles the volume and qualifies buyers; your reps spend their time closing."],
+  ["Social, handled safely", "Consistent, on-brand posting across Facebook & Instagram — with a human approving every post."],
   ["Spend that proves itself", "Budget follows the channels that actually bring buyers — not guesswork."],
   ["Leaders always informed", "A plain-English briefing every morning, straight from live data. No waiting on reports."],
   ["An asset you own", "This is TSAT's own system and data — not a rented tool you can't control."],
-  ["Built to scale", "Prove it in the pilot, then expand across cities and channels with confidence."],
+  ["Built to scale", "Prove it in the pilot, then add LinkedIn, X and more cities with confidence."],
 ];
 gains.forEach((g, i) => {
   const col = i % 3, row = Math.floor(i / 3);
@@ -232,7 +256,7 @@ gains.forEach((g, i) => {
 });
 
 // =========================================================
-// SLIDE 8 — KPIs (the return)
+// 9 — KPIs (the return)
 // =========================================================
 s = pres.addSlide({ masterName: "CONTENT" });
 s.addText("The return we'll hold ourselves to", { placeholder: "title" });
@@ -242,7 +266,7 @@ const kpis = [
   ["70%+", "leads AI-qualified\nbefore handoff", TEAL],
   ["500 / 300", "leads target\nAbuja / Kano", NAVY],
   ["30%", "lead-to-sale\nconversion", GREEN],
-  ["2×", "referral\ngrowth", GREEN],
+  ["0", "unapproved posts\never published", GREEN],
   ["80%+", "execs using the\napp each week", AMBER],
 ];
 kpis.forEach((k, i) => {
@@ -255,22 +279,22 @@ kpis.forEach((k, i) => {
 });
 
 // =========================================================
-// SLIDE 9 — SCOPE
+// 10 — SCOPE
 // =========================================================
 s = pres.addSlide({ masterName: "CONTENT" });
 s.addText("What the pilot includes", { placeholder: "title" });
-s.addText("A focused, proof-first build: the highest-value channel plus the executive app, live in Abuja and Kano. Scale comes after the pilot earns it.", { x: 0.6, y: 1.32, w: 12.1, h: 0.5, fontSize: 15, color: SOFT, fontFace: "Calibri", isTextBox: true });
+s.addText("A focused build: WhatsApp sales, a Meta (Facebook & Instagram) social manager, and the executive app — live in Abuja and Kano. LinkedIn, X and wider scale come next.", { x: 0.6, y: 1.32, w: 12.1, h: 0.5, fontSize: 14.5, color: SOFT, fontFace: "Calibri", isTextBox: true });
 card(s, 0.6, 2.1, 5.97, 4.3);
 s.addText([{ text: "✓  ", options: { color: GREEN, bold: true } }, { text: "Included in the pilot", options: { color: GREEN, bold: true } }], { x: 0.9, y: 2.35, w: 5.4, h: 0.45, fontSize: 17, fontFace: "Cambria", margin: 0, isTextBox: true });
-const inc = ["WhatsApp Sales Assistant (Hausa & English)", "Executive App — daily briefings, KPIs, Q&A", "Lean Visibility Assistant (content + monitoring)", "CRM setup + shared data layer", "NDPR / data-protection review", "Live pilot across Abuja & Kano"];
-s.addText(inc.map((t) => ({ text: t, options: { bullet: { code: "2713", indent: 18 }, color: INK, breakLine: true, paraSpaceAfter: 10 } })), { x: 0.95, y: 2.95, w: 5.3, h: 3.3, fontSize: 13.5, color: INK, fontFace: "Calibri", valign: "top", margin: 0, isTextBox: true });
+const inc = ["WhatsApp Sales Assistant (Hausa & English)", "Social manager — Facebook & Instagram", "Scheduling, safe-trend filter & 5-hour approval gate", "DM auto-replies that route to a human agent", "Executive App — daily briefings, KPIs, Q&A", "CRM + shared data layer · NDPR review", "Live pilot across Abuja & Kano"];
+s.addText(inc.map((t) => ({ text: t, options: { bullet: { code: "2713", indent: 18 }, color: INK, breakLine: true, paraSpaceAfter: 9 } })), { x: 0.95, y: 2.95, w: 5.35, h: 3.3, fontSize: 13, color: INK, fontFace: "Calibri", valign: "top", margin: 0, isTextBox: true });
 card(s, 6.76, 2.1, 5.97, 4.3, MIST);
-s.addText([{ text: "→  ", options: { color: NAVY, bold: true } }, { text: "Deferred until after the pilot", options: { color: NAVY, bold: true } }], { x: 7.06, y: 2.35, w: 5.4, h: 0.45, fontSize: 17, fontFace: "Cambria", margin: 0, isTextBox: true });
-const def = ["Native iOS / Android apps", "Full-scale paid advertising spend", "Expansion beyond the two pilot cities", "Advanced analytics / BI build-out", "Year-2+ maintenance & retraining"];
-s.addText(def.map((t) => ({ text: t, options: { bullet: { code: "2192", indent: 18 }, color: SOFT, breakLine: true, paraSpaceAfter: 12 } })), { x: 7.11, y: 2.95, w: 5.3, h: 3.3, fontSize: 13.5, color: SOFT, fontFace: "Calibri", valign: "top", margin: 0, isTextBox: true });
+s.addText([{ text: "→  ", options: { color: NAVY, bold: true } }, { text: "Next phase (separate budget)", options: { color: NAVY, bold: true } }], { x: 7.06, y: 2.35, w: 5.4, h: 0.45, fontSize: 17, fontFace: "Cambria", margin: 0, isTextBox: true });
+const def = ["LinkedIn & X social management", "Native iOS / Android apps", "Full-scale paid advertising spend", "Expansion beyond the two pilot cities", "Advanced analytics / BI build-out", "Year-2+ maintenance & retraining"];
+s.addText(def.map((t) => ({ text: t, options: { bullet: { code: "2192", indent: 18 }, color: SOFT, breakLine: true, paraSpaceAfter: 11 } })), { x: 7.11, y: 2.95, w: 5.3, h: 3.3, fontSize: 13, color: SOFT, fontFace: "Calibri", valign: "top", margin: 0, isTextBox: true });
 
 // =========================================================
-// SLIDE 10 — TIMELINE
+// 11 — TIMELINE
 // =========================================================
 s = pres.addSlide({ masterName: "CONTENT" });
 s.addText("Timeline: from kickoff to live pilot in ~16 weeks", { placeholder: "title" });
@@ -279,7 +303,7 @@ const phases = [
   ["Wk 1–2", "Discovery", "Lock scope, budget, CRM choice"],
   ["Wk 2–4", "Data foundation", "Stand up CRM + shared data layer"],
   ["Wk 4–7", "Sales Assistant", "WhatsApp agent live in pilot group"],
-  ["Wk 6–9", "Visibility Assistant", "First AI-drafted, approved content"],
+  ["Wk 6–10", "Social manager", "FB/IG scheduling + approval gate live"],
   ["Wk 8–12", "Executive App", "Execs using daily briefings"],
   ["Wk 12–14", "QA & security", "NDPR sign-off, all agents tested"],
   ["Wk 14–16", "Pilot launch", "Live in Abuja & Kano, KPIs tracked"],
@@ -292,22 +316,22 @@ phases.forEach((p, i) => {
   tag(s, cxx - 0.62, 2.1, p[0], TEAL_D, TEALSOFT);
   card(s, px, 3.25, pw, 2.5);
   s.addText((i + 1).toString(), { x: px + 0.12, y: 3.38, w: pw - 0.24, h: 0.45, align: "left", fontSize: 19, bold: true, color: "C7D2DC", fontFace: "Cambria", margin: 0, isTextBox: true });
-  s.addText(p[1], { x: px + 0.12, y: 3.82, w: pw - 0.24, h: 0.9, fontSize: 12.5, bold: true, color: INK, fontFace: "Calibri", valign: "top", margin: 0, isTextBox: true });
+  s.addText(p[1], { x: px + 0.12, y: 3.82, w: pw - 0.24, h: 0.9, fontSize: 12, bold: true, color: INK, fontFace: "Calibri", valign: "top", margin: 0, isTextBox: true });
   s.addText(p[2], { x: px + 0.12, y: 4.68, w: pw - 0.24, h: 1.0, fontSize: 10.5, color: SOFT, fontFace: "Calibri", valign: "top", margin: 0, isTextBox: true });
   px += pw + 0.1;
 });
 
 // =========================================================
-// SLIDE 11 — BUDGET AT A GLANCE
+// 12 — BUDGET AT A GLANCE
 // =========================================================
 s = pres.addSlide({ masterName: "CONTENT" });
 s.addText("The investment at a glance", { placeholder: "title" });
-s.addText("Build, first-year running, and professional fees — a complete, all-in figure that lands $600 under the $20,000 ceiling.", { x: 0.6, y: 1.32, w: 12.1, h: 0.5, fontSize: 15, color: SOFT, fontFace: "Calibri", isTextBox: true });
+s.addText("A complete, all-in figure for the pilot. The new Meta social media manager is the reason it rose above the earlier number — and it can be removed if TSAT prefers to start leaner.", { x: 0.6, y: 1.32, w: 12.1, h: 0.5, fontSize: 14.5, color: SOFT, fontFace: "Calibri", isTextBox: true });
 const big = [
-  ["$12,800", "₦19.84M", "One-time build", TEAL],
-  ["$1,600", "₦2.48M", "Year-1 running", NAVY],
-  ["$5,000", "₦7.75M", "Professional & admin", AMBER],
-  ["$19,400", "₦30.07M", "Grand total", GREEN],
+  ["$16,800", "₦26.04M", "One-time build", TEAL],
+  ["$2,100", "₦3.26M", "Year-1 running", NAVY],
+  ["$3,500", "₦5.43M", "Professional & admin", AMBER],
+  ["$22,400", "₦34.72M", "Grand total (all-in)", GREEN],
 ];
 let bx = 0.6; const bw = 2.95;
 big.forEach((b, i) => {
@@ -315,7 +339,7 @@ big.forEach((b, i) => {
   card(s, bx, 2.1, bw, 2.2, emph ? GREENSOFT : PAPER);
   s.addText(b[0], { x: bx, y: 2.45, w: bw, h: 0.7, align: "center", fontSize: 31, bold: true, color: b[3], fontFace: "Cambria", margin: 0, isTextBox: true });
   s.addText(b[1], { x: bx, y: 3.15, w: bw, h: 0.4, align: "center", fontSize: 14, color: SOFT, fontFace: "Calibri", margin: 0, isTextBox: true });
-  s.addText(b[2], { x: bx + 0.1, y: 3.62, w: bw - 0.2, h: 0.5, align: "center", fontSize: 12.5, color: emph ? GREEN : FAINT, bold: emph, fontFace: "Calibri", margin: 0, isTextBox: true });
+  s.addText(b[2], { x: bx + 0.1, y: 3.62, w: bw - 0.2, h: 0.5, align: "center", fontSize: 12, color: emph ? GREEN : FAINT, bold: emph, fontFace: "Calibri", margin: 0, isTextBox: true });
   bx += bw + 0.17;
 });
 card(s, 0.6, 4.6, 12.13, 1.85, MIST);
@@ -323,7 +347,7 @@ s.addText("Planning assumptions", { x: 0.95, y: 4.8, w: 11, h: 0.4, fontSize: 15
 const asmp = [
   ["Blended build rate", "$25 / hour — experienced local developer. The single biggest lever on the total."],
   ["Exchange rate", "₦1,550 = $1 (November 2026). Figures move with the rate."],
-  ["Headroom", "$600 under the $20,000 ceiling — kept as contingency."],
+  ["Social manager = the increase", "The Meta module adds $4,000 build + $500/yr. Remove it and defer to a Phase 2 review → $17,900 all-in."],
 ];
 let mx = 0.95; const mw = 3.75;
 asmp.forEach((a) => {
@@ -333,12 +357,13 @@ asmp.forEach((a) => {
 });
 
 // =========================================================
-// SLIDE 12 — BUILD COST DETAIL (chart + table)
+// 13 — BUILD COST DETAIL
 // =========================================================
 s = pres.addSlide({ masterName: "CONTENT" });
 s.addText("Where the build budget goes", { placeholder: "title" });
-s.addText("One-time development — 520 hours across seven work areas, $12,800 total.", { x: 0.6, y: 1.32, w: 12.1, h: 0.4, fontSize: 15, color: SOFT, fontFace: "Calibri", isTextBox: true });
+s.addText("One-time development — 680 hours across eight work areas, $16,800 total (includes the Meta social manager).", { x: 0.6, y: 1.32, w: 12.1, h: 0.4, fontSize: 15, color: SOFT, fontFace: "Calibri", isTextBox: true });
 const buildRows = [
+  ["Social manager (Meta: FB + IG)", 160, 4000],
   ["Agent API backend", 120, 3000],
   ["Executive App (PWA)", 110, 2750],
   ["WhatsApp Sales Assistant", 90, 2250],
@@ -348,28 +373,27 @@ const buildRows = [
   ["Requirements & coordination", 40, 800],
 ];
 s.addChart(pres.ChartType.bar, [{ name: "Cost (USD)", labels: buildRows.map((r) => r[0]), values: buildRows.map((r) => r[2]) }], {
-  x: 0.6, y: 2.0, w: 6.5, h: 4.45, barDir: "bar", chartColors: [TEAL],
+  x: 0.6, y: 1.95, w: 6.5, h: 4.55, barDir: "bar", chartColors: [TEAL],
   showTitle: false, showLegend: false, showValue: true, dataLabelPosition: "outEnd",
-  dataLabelFormatCode: '"$"#,##0', dataLabelColor: INK, dataLabelFontFace: "+mn-lt", dataLabelFontSize: 10,
-  catAxisLabelColor: INK, catAxisLabelFontFace: "+mn-lt", catAxisLabelFontSize: 10.5,
+  dataLabelFormatCode: '"$"#,##0', dataLabelColor: INK, dataLabelFontFace: "+mn-lt", dataLabelFontSize: 9.5,
+  catAxisLabelColor: INK, catAxisLabelFontFace: "+mn-lt", catAxisLabelFontSize: 10,
   valAxisHidden: true, valGridLine: { style: "none" }, catGridLine: { style: "none" },
-  valAxisMaxVal: 3600, barGapWidthPct: 45,
+  valAxisMaxVal: 4700, barGapWidthPct: 40,
 });
 const bt = [[th("Work area"), th("Hrs", "center"), th("USD", "right")]];
 buildRows.forEach((r, i) => bt.push([td(r[0], "left", i), td(r[1].toString(), "center", i), td("$" + r[2].toLocaleString(), "right", i)]));
-bt.push([tsub("Build subtotal"), tsub("520", "center"), tsub("$12,800", "right")]);
-s.addTable(bt, { x: 7.35, y: 2.1, w: 5.38, colW: [3.28, 0.7, 1.4], rowH: 0.42, border: { type: "solid", color: LINE, pt: 1 }, valign: "middle" });
+bt.push([tsub("Build subtotal"), tsub("680", "center"), tsub("$16,800", "right")]);
+s.addTable(bt, { x: 7.35, y: 2.1, w: 5.38, colW: [3.28, 0.7, 1.4], rowH: 0.4, border: { type: "solid", color: LINE, pt: 1 }, valign: "middle" });
 
 // =========================================================
-// SLIDE 13 — RUNNING + PROFESSIONAL FEES + GRAND TOTAL
+// 14 — RUNNING + PROFESSIONAL + TOTAL
 // =========================================================
 s = pres.addSlide({ masterName: "CONTENT" });
 s.addText("Running costs, professional fees & the total", { placeholder: "title" });
 s.addText("After the one-time build, modest recurring services keep it live; professional and administrative fees cover delivery, training and compliance.", { x: 0.6, y: 1.32, w: 12.1, h: 0.5, fontSize: 14.5, color: SOFT, fontFace: "Calibri", isTextBox: true });
-
-// Left: running
 const runRows = [
   ["Claude AI usage (pilot scale)", 600, 930000],
+  ["Social: moderation + Meta API", 500, 775000],
   ["Hosting & infrastructure", 300, 465000],
   ["WhatsApp Business API / BSP", 300, 465000],
   ["CRM subscription (year 1)", 300, 465000],
@@ -377,53 +401,49 @@ const runRows = [
 ];
 const rt = [[th("Year-1 running"), th("USD", "right"), th("Naira (₦)", "right")]];
 runRows.forEach((r, i) => rt.push([td(r[0], "left", i), td("$" + r[1].toLocaleString(), "right", i), td("₦" + r[2].toLocaleString(), "right", i)]));
-rt.push([tsub("Running subtotal"), tsub("$1,600", "right"), tsub("₦2,480,000", "right")]);
-s.addTable(rt, { x: 0.6, y: 2.25, w: 5.9, colW: [3.3, 1.2, 1.4], rowH: 0.4, border: { type: "solid", color: LINE, pt: 1 }, valign: "middle" });
-
-// Right: professional & admin
+rt.push([tsub("Running subtotal"), tsub("$2,100", "right"), tsub("₦3,255,000", "right")]);
+s.addTable(rt, { x: 0.6, y: 2.2, w: 5.9, colW: [3.3, 1.2, 1.4], rowH: 0.4, border: { type: "solid", color: LINE, pt: 1 }, valign: "middle" });
 const proRows = [
-  ["Project management & professional services", 2500, 3875000],
-  ["Staff training & handover", 1000, 1550000],
-  ["Legal, NDPR compliance & documentation", 800, 1240000],
-  ["Administrative & contingency", 700, 1085000],
+  ["Project management & professional services", 1800, 2790000],
+  ["Staff training & handover", 800, 1240000],
+  ["Legal, NDPR compliance & documentation", 500, 775000],
+  ["Administrative & contingency", 400, 620000],
 ];
 const pt = [[th("Professional & admin fees"), th("USD", "right"), th("Naira (₦)", "right")]];
 proRows.forEach((r, i) => pt.push([td(r[0], "left", i), td("$" + r[1].toLocaleString(), "right", i), td("₦" + r[2].toLocaleString(), "right", i)]));
-pt.push([tsub("Professional subtotal"), tsub("$5,000", "right"), tsub("₦7,750,000", "right")]);
-s.addTable(pt, { x: 6.75, y: 2.25, w: 5.98, colW: [3.38, 1.2, 1.4], rowH: 0.4, border: { type: "solid", color: LINE, pt: 1 }, valign: "middle" });
-
-// bottom grand total bar
-s.addShape(pres.ShapeType.roundRect, { x: 0.6, y: 5.5, w: 12.13, h: 1.0, rectRadius: 0.1, fill: { color: TEAL_DARK }, line: { type: "none" } });
+pt.push([tsub("Professional subtotal"), tsub("$3,500", "right"), tsub("₦5,425,000", "right")]);
+s.addTable(pt, { x: 6.75, y: 2.2, w: 5.98, colW: [3.38, 1.2, 1.4], rowH: 0.4, border: { type: "solid", color: LINE, pt: 1 }, valign: "middle" });
+s.addShape(pres.ShapeType.roundRect, { x: 0.6, y: 5.55, w: 12.13, h: 1.0, rectRadius: 0.1, fill: { color: TEAL_DARK }, line: { type: "none" } });
 s.addText([
   { text: "Grand total   ", options: { fontSize: 17, bold: true, color: "FFFFFF", fontFace: "Cambria" } },
-  { text: "$19,400", options: { fontSize: 24, bold: true, color: "FFFFFF", fontFace: "Cambria" } },
-  { text: "   ≈ ₦30,070,000", options: { fontSize: 14, color: "BFE0E4" } },
-], { x: 0.95, y: 5.5, w: 7.8, h: 1.0, valign: "middle", align: "left", fontFace: "Calibri", margin: 0, isTextBox: true });
-s.addShape(pres.ShapeType.roundRect, { x: 9.1, y: 5.73, w: 3.4, h: 0.55, rectRadius: 0.1, fill: { color: "0F4A54" }, line: { type: "none" } });
-s.addText([{ text: "$600 under ", options: { color: "FFFFFF", bold: true } }, { text: "the $20,000 ceiling", options: { color: "BFE0E4" } }], { x: 9.1, y: 5.73, w: 3.4, h: 0.55, align: "center", valign: "middle", fontSize: 12.5, fontFace: "Calibri", margin: 0, isTextBox: true });
+  { text: "$22,400", options: { fontSize: 24, bold: true, color: "FFFFFF", fontFace: "Cambria" } },
+  { text: "   ≈ ₦34,720,000", options: { fontSize: 14, color: "BFE0E4" } },
+], { x: 0.95, y: 5.55, w: 8.0, h: 1.0, valign: "middle", align: "left", fontFace: "Calibri", margin: 0, isTextBox: true });
+s.addShape(pres.ShapeType.roundRect, { x: 8.7, y: 5.78, w: 3.8, h: 0.55, rectRadius: 0.1, fill: { color: "0F4A54" }, line: { type: "none" } });
+s.addText([{ text: "Without social manager → ", options: { color: "BFE0E4" } }, { text: "$17,900", options: { color: "FFFFFF", bold: true } }], { x: 8.7, y: 5.78, w: 3.8, h: 0.55, align: "center", valign: "middle", fontSize: 11.5, fontFace: "Calibri", margin: 0, isTextBox: true });
 
 // =========================================================
-// SLIDE 14 — NEXT STEPS
+// 15 — NEXT STEPS
 // =========================================================
 s = pres.addSlide({ masterName: "DARK" });
 s.addText("Next steps", { x: 0.75, y: 0.8, w: 11.8, h: 1.0, fontSize: 40, bold: true, color: "FFFFFF", fontFace: "Cambria", isTextBox: true });
 s.addText("Three decisions and we begin building within the week.", { x: 0.8, y: 1.8, w: 11.6, h: 0.5, fontSize: 16, color: "BFE0E4", fontFace: "Calibri", isTextBox: true });
 const ns = [
-  ["1", "Approve the budget", "Confirm the $19,400 all-in pilot and the rate / exchange assumptions."],
-  ["2", "Name a TSAT owner", "One point of contact to steer discovery and sign off each phase."],
-  ["3", "Kick off discovery", "We start Phase 1 — stakeholder interviews and CRM audit — in week one."],
+  ["1", "Approve the budget", "Confirm the $22,400 all-in pilot (or $17,900 without the social manager)."],
+  ["2", "Name a TSAT owner", "A point of contact plus the Comms Manager who approves social posts."],
+  ["3", "Start platform access", "Begin Meta Business & App Review setup so social is ready at launch."],
 ];
 let nx = 0.8; const nw = 3.84;
 ns.forEach((n) => {
   s.addShape(pres.ShapeType.roundRect, { x: nx, y: 2.75, w: nw, h: 2.3, rectRadius: 0.1, fill: { color: "0F4A54" }, line: { color: "15707F", width: 1 } });
   badge(s, nx + 0.3, 3.05, 0.65, TEAL, n[0], "FFFFFF");
   s.addText(n[1], { x: nx + 0.3, y: 3.85, w: nw - 0.6, h: 0.5, fontSize: 16, bold: true, color: "FFFFFF", fontFace: "Cambria", margin: 0, isTextBox: true });
-  s.addText(n[2], { x: nx + 0.3, y: 4.35, w: nw - 0.6, h: 0.65, fontSize: 12.5, color: "BFE0E4", fontFace: "Calibri", valign: "top", margin: 0, isTextBox: true });
+  s.addText(n[2], { x: nx + 0.3, y: 4.35, w: nw - 0.6, h: 0.72, fontSize: 12.5, color: "BFE0E4", fontFace: "Calibri", valign: "top", margin: 0, isTextBox: true });
   nx += nw + 0.2;
 });
 s.addText([
   { text: "Ready to proceed.  ", options: { bold: true, color: "FFFFFF" } },
-  { text: "TSAT AI Assistant pilot  ·  $19,400 all-in (≈ ₦30.07M)  ·  live in ~16 weeks", options: { color: "9FC9CF" } },
+  { text: "TSAT AI Assistant pilot  ·  $22,400 all-in (≈ ₦34.72M)  ·  live in ~16 weeks", options: { color: "9FC9CF" } },
 ], { x: 0.8, y: 5.55, w: 11.7, h: 0.5, fontSize: 14, align: "left", fontFace: "Calibri", isTextBox: true });
 s.addText("Prepared for TSAT Communications LTD  ·  bekaji007@gmail.com", { x: 0.8, y: 6.75, w: 11.7, h: 0.35, fontSize: 10.5, color: "6FA2A9", fontFace: "Calibri", isTextBox: true });
 
